@@ -48,7 +48,6 @@ class ReportController extends Controller
             $this->reportService->show($report)
         );
     }
-
     public function update(UpdateReportRequest $request, Report $report)
     {
         if ($request->user()->id !== $report->user_id) {

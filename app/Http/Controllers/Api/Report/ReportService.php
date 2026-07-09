@@ -4,7 +4,6 @@ namespace App\Services\Report;
 
 use App\Models\Report;
 use Illuminate\Support\Facades\DB;
-
 class ReportService
 {
     public function store(array $data, $user)
