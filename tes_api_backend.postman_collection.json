@@ -1,0 +1,291 @@
+{
+  "info": {
+    "_postman_id": "3e37b146-3c14-4e9d-82d4-e900b36ceb54",
+    "name": "tes_api_backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54358971",
+    "_collection_link": "https://go.postman.co/collection/54358971-3e37b146-3c14-4e9d-82d4-e900b36ceb54?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "application/json",
+            "type": "text"
+          },
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"nim\":\"60200124047\",\r\n    \"name\":\"Andi\",\r\n    \"email\":\"nabil@uin-alauddin.ac.id\",\r\n    \"phone\":\"082192685325\",\r\n    \"password\":\"Password123\",\r\n    \"password_confirmation\":\"Password123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/register",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "register"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Veryfikasi OTP",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"nabil@uin-alauddin.ac.id\",\r\n    \"otp\":\"854050\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/verify-otp",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "verify-otp"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"email\":\"nabil@uin-alauddin.ac.id\",\r\n    \"password\":\"Password123\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/login",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "auth",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Ambil Category",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_1abi}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/categories",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "categories"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Post Rports",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_1abi}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "category_id",
+              "type": "text",
+              "uuid": "e6af5e90-756b-415d-babe-09fe723d3673",
+              "value": "1"
+            },
+            {
+              "key": "type",
+              "type": "text",
+              "uuid": "1fb13bec-bde3-4701-be35-6e0900573c9f",
+              "value": "lost"
+            },
+            {
+              "key": "title",
+              "type": "text",
+              "uuid": "380fdf25-6519-4d22-b701-5e8995ee7c55",
+              "value": "Baju"
+            },
+            {
+              "key": "description",
+              "type": "text",
+              "uuid": "7622fb44-3109-4819-bf97-d86770fc8334",
+              "value": "Ditemukan baju di perpustakaan"
+            },
+            {
+              "key": "location_name",
+              "type": "text",
+              "uuid": "10426894-52d0-4f30-8a93-13673bb3e423",
+              "value": "Perpustakaan"
+            },
+            {
+              "key": "address",
+              "type": "text",
+              "uuid": "8cdaa0a9-c6d2-4b42-ba1f-2eee55ae9ea7",
+              "value": "Di atas meja perrpus"
+            },
+            {
+              "key": "incident_date",
+              "type": "text",
+              "uuid": "afe69eef-39fe-4822-b945-22e61d13d50b",
+              "value": "2026-07-02"
+            },
+            {
+              "key": "contact_phone",
+              "type": "text",
+              "uuid": "c9837f4b-e81e-47a6-bca7-c0202bdba4bb",
+              "value": "082112442643"
+            },
+            {
+              "key": "is_anonymous",
+              "type": "text",
+              "uuid": "7d7f983b-501e-4ca9-bb9e-d791ac9cd14d",
+              "value": "0"
+            },
+            {
+              "key": "images[]",
+              "type": "file",
+              "uuid": "183bd997-abfa-4363-b389-cafb021ef828",
+              "src": "postman-cloud:///1f175bdc-dff1-40b0-82af-a4bb5a652ebd"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/reports",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "reports"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "{{auth_secret_1abi}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/reports",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "reports"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "auth_secret_1abi",
+      "secret": true
+    }
+  ]
+}
