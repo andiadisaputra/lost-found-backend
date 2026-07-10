@@ -84,7 +84,7 @@ public function login(LoginRequest $request): JsonResponse
         $result = $this->authService->login(
             $request->validated()
         );
-
+        
         return response()->json([
             'success' => true,
             'message' => 'Login berhasil.',
